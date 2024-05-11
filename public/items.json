@@ -1,0 +1,192 @@
+[
+    {
+      "name": "Sushi",
+      "image": "https://i.ibb.co/z4JtCBP/Tuna-Sushi-Rolls-800x550-1.jpg",
+      "category": "Japanese Cuisine",
+      "quantity": 8,
+      "price": 12,
+      "origin": "Japan",
+      "description": "Sushi is a traditional Japanese dish consisting of vinegared rice combined with various ingredients such as raw fish, seafood, vegetables, and occasionally tropical fruits. The ingredients are rolled inside seaweed sheets (nori) and served in bite-sized pieces. Common types of sushi include nigiri (hand-pressed sushi) and maki (rolled sushi)."
+    },
+    {
+      "name": "Pizza",
+      "image": "https://i.ibb.co/0yKwzfn/mejores-pizzas-italia.webp",
+      "category": "Italian Cuisine",
+      "quantity": 1,
+      "price": 15,
+      "origin": "Italy",
+      "description": "Pizza is a popular Italian dish consisting of a yeasted flatbread typically topped with tomato sauce, cheese, and various toppings such as meats, vegetables, and herbs. The pizza is baked in an oven, resulting in a delicious combination of flavors and textures. It is enjoyed worldwide and comes in a variety of styles, including Neapolitan, Chicago deep dish, and New York-style."
+    },
+    {
+      "name": "Tacos",
+      "image": "https://i.ibb.co/SPprB7d/smash-burger-tacos-2-500x500.webp",
+      "category": "Mexican Cuisine",
+      "quantity": 3,
+      "price": 10,
+      "origin": "Mexico",
+      "description": "Tacos are a traditional Mexican dish consisting of a corn or wheat tortilla filled with various ingredients such as seasoned meat (beef, chicken, pork), beans, cheese, lettuce, tomatoes, and salsa. The tortilla is folded around the filling to create a handheld meal that is both flavorful and satisfying. Tacos are often served with lime wedges and garnished with cilantro and onions."
+    },
+    {
+      "name": "Burger",
+      "image": "https://i.ibb.co/M26dfcG/burger.jpg",
+      "category": "American Cuisine",
+      "quantity": 1,
+      "price": 9,
+      "origin": "United States",
+      "description": "A burger is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bun. The patty may be grilled, fried, or flame-broiled and is often seasoned with various spices and condiments such as ketchup, mustard, mayonnaise, lettuce, tomato, onion, and pickles. Burgers are a staple of American cuisine and are enjoyed worldwide."
+    },
+    {
+      "name": "Pad Thai",
+      "image": "https://i.ibb.co/NrSVxkP/Pad-Thai.jpg",
+      "category": "Thai Cuisine",
+      "quantity": 1,
+      "price": 11,
+      "origin": "Thailand",
+      "description": "Pad Thai is a popular Thai stir-fried noodle dish made with rice noodles, eggs, tofu, shrimp, or chicken, bean sprouts, peanuts, and a flavorful sauce made from tamarind paste, fish sauce, garlic, chili peppers, and palm sugar. It is garnished with lime wedges and cilantro and is often served with additional condiments such as chili flakes and ground peanuts."
+    },
+    {
+      "name": "Croissant",
+      "image": "https://i.ibb.co/Qc5dTrZ/Croissant.jpg",
+      "category": "French Pastry",
+      "quantity": 1,
+      "price": 3,
+      "origin": "France",
+      "description": "A croissant is a buttery, flaky pastry of Austrian origin, but mostly associated with France. It is made of a layered yeast-leavened dough that is folded and rolled several times in succession, then rolled into a sheet, in a technique called laminating. The result is a crescent-shaped pastry with a golden, crispy exterior and a soft, buttery interior. Croissants are often enjoyed as a breakfast or snack."
+    },
+    {
+      "name": "Sushi Roll",
+      "image": "https://i.ibb.co/0Yjhn5d/Sushi-Roll.jpg",
+      "category": "Japanese Cuisine",
+      "quantity": 6,
+      "price": 10,
+      "origin": "Japan",
+      "description": "Sushi rolls, also known as makizushi, are a type of sushi that is rolled using a bamboo mat called a makisu. They typically consist of sushi rice, seaweed (nori), and various fillings such as raw fish, cooked seafood, vegetables, and avocado. The roll is then sliced into bite-sized pieces and served with soy sauce, wasabi, and pickled ginger. Popular sushi rolls include California roll, spicy tuna roll, and rainbow roll."
+    },
+    {
+      "name": "Lasagna",
+      "image": "https://i.ibb.co/5c1JwJq/Lasagna.jpg",
+      "category": "Italian Cuisine",
+      "quantity": 1,
+      "price": 13,
+      "origin": "Italy",
+      "description": "Lasagna is a classic Italian dish consisting of layers of wide, flat pasta noodles, alternating with layers of meat sauce, béchamel sauce, and cheese, typically mozzarella and Parmesan. The dish is baked in the oven until the top is golden and bubbly. It is hearty, flavorful, and a favorite comfort food for many. Lasagna variations may include vegetables, such as spinach or eggplant, in addition to or instead of meat."
+    },
+    {
+      "name": "Samosa",
+      "image": "https://i.ibb.co/hBGB13B/Samosa.jpg",
+      "category": "Indian Cuisine",
+      "quantity": 1,
+      "price": 2,
+      "origin": "India",
+      "description": "A samosa is a popular Indian snack consisting of a deep-fried pastry filled with a savory filling, usually spiced potatoes, peas, and sometimes meat such as chicken or lamb. The pastry crust is made from refined flour and is crispy and flaky. Samosas are often triangular in shape and are served hot, typically accompanied by chutneys such as tamarind or mint."
+    },
+    {
+      "name": "Fish and Chips",
+      "image": "https://i.ibb.co/QfmY76m/Fish-and-Chips.webp",
+      "category": "British Cuisine",
+      "quantity": 1,
+      "price": 12,
+      "origin": "United Kingdom",
+      "description": "Fish and chips is a popular British dish consisting of deep-fried fish (usually cod or haddock) accompanied by thick-cut fries (chips). The fish is coated in a batter made from flour and beer or water, which results in a crispy and golden exterior. It is typically served with tartar sauce, mushy peas, and a slice of lemon. Fish and chips is a beloved comfort food in the United Kingdom and is enjoyed by people of all ages."
+    },
+    {
+      "name": "Pho",
+      "image": "https://i.ibb.co/sWF8HwK/pho-recipe.jpg",
+      "category": "Vietnamese Cuisine",
+      "quantity": 1,
+      "price": 8,
+      "origin": "Vietnam",
+      "description": "Pho is a traditional Vietnamese noodle soup consisting of broth, rice noodles, herbs, and meat (usually beef or chicken). The broth is simmered for hours with various spices and aromatics such as star anise, cinnamon, cloves, and ginger, resulting in a flavorful and fragrant soup. Pho is often served with a plate of fresh herbs, bean sprouts, lime wedges, and chili peppers, allowing diners to customize their bowls to their liking."
+    },
+    {
+      "name": "Ramen",
+      "image": "https://i.ibb.co/jHKRFty/Homemade-Ramen.jpg",
+      "category": "Japanese Cuisine",
+      "quantity": 1,
+      "price": 10,
+      "origin": "Japan",
+      "description": "Ramen is a Japanese noodle soup dish consisting of Chinese-style wheat noodles served in a meat or fish-based broth, often flavored with soy sauce or miso, and topped with various ingredients such as sliced pork, seaweed, bamboo shoots, and green onions. Ramen is a popular comfort food in Japan and is enjoyed in countless regional variations, each with its own unique broth and toppings."
+    },
+    {
+      "name": "Paella",
+      "image": "https://i.ibb.co/T4vFgrx/Oven-paella.jpg",
+      "category": "Spanish Cuisine",
+      "quantity": 1,
+      "price": 16,
+      "origin": "Spain",
+      "description": "Paella is a traditional Spanish rice dish originating from the Valencian region. It is typically cooked in a wide, shallow pan and features a variety of ingredients such as saffron-infused rice, chicken, rabbit, seafood (such as shrimp, mussels, and clams), and vegetables (such as tomatoes, peas, and bell peppers). The dish is flavored with garlic, paprika, and other spices, resulting in a colorful and aromatic meal that is perfect for sharing with family and friends."
+    },
+    {
+      "name": "Pasta Carbonara",
+      "image": "https://i.ibb.co/LzvQB3B/Pasta-Carbonara.jpg",
+      "category": "Italian Cuisine",
+      "quantity": 1,
+      "price": 14,
+      "origin": "Italy",
+      "description": "Pasta carbonara is a classic Italian pasta dish made with spaghetti, eggs, pancetta or bacon, grated Pecorino Romano cheese, and black pepper. The dish is creamy and indulgent, with the sauce created by combining beaten eggs with grated cheese and mixing it with hot pasta to create a silky coating. The pancetta or bacon adds a salty and savory flavor, while the black pepper provides a hint of spice. Pasta carbonara is a simple yet delicious meal that is sure to satisfy."
+    },
+    {
+      "name": "Croque Monsieur",
+      "image": "https://i.ibb.co/1fBkpC6/Croque-monsiuer.jpg",
+      "category": "French Cuisine",
+      "quantity": 1,
+      "price": 10,
+      "origin": "France",
+      "description": "Croque Monsieur is a classic French sandwich made with sliced ham, Gruyère cheese, and béchamel sauce, sandwiched between slices of buttered bread. The sandwich is then grilled or baked until the cheese is melted and bubbly and the bread is golden and crispy. Croque Monsieur is a beloved French comfort food, often served in cafés and bistros throughout France."
+    },
+    {
+      "name": "Moussaka",
+      "image": "https://i.ibb.co/xgWnV67/Greek-Moussaka.webp",
+      "category": "Greek Cuisine",
+      "quantity": 1,
+      "price": 13,
+      "origin": "Greece",
+      "description": "Moussaka is a traditional Greek dish consisting of layers of eggplant, minced meat (usually lamb or beef), tomatoes, onions, and spices, topped with a creamy béchamel sauce and baked until golden and bubbly. The dish is hearty, flavorful, and perfect for feeding a crowd. Moussaka is often served as a main course alongside a Greek salad and crusty bread."
+    },
+    {
+      "name": "Hamburger",
+      "image": "https://i.ibb.co/D9LLL4x/Hamburger.jpg",
+      "category": "American Cuisine",
+      "quantity": 1,
+      "price": 9,
+      "origin": "United States",
+      "description": "A hamburger, or burger, is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bun. The patty may be grilled, fried, or flame-broiled and is often seasoned with various spices and condiments such as ketchup, mustard, mayonnaise, lettuce, tomato, onion, and pickles. Hamburgers are a staple of American cuisine and are enjoyed worldwide."
+    },
+    {
+      "name": "Ratatouille",
+      "image": "https://i.ibb.co/4J35hwp/Ratatouille.webp",
+      "category": "French Cuisine",
+      "quantity": 1,
+      "price": 12,
+      "origin": "France",
+      "description": "Ratatouille is a traditional French Provençal stewed vegetable dish originating from Nice. It typically consists of tomatoes, eggplant, zucchini, bell peppers, onions, garlic, and herbs such as basil and thyme, all simmered together until tender. Ratatouille is a flavorful and colorful dish that can be served as a main course or as a side dish, and is often enjoyed with crusty bread or rice."
+    },
+    {
+      "name": "Chicken Tikka Masala",
+      "image": "https://i.ibb.co/hXsQDj8/Air-Fryer-Chicken-Tikka-Masala.jpg",
+      "category": "Indian Cuisine",
+      "quantity": 1,
+      "price": 15,
+      "origin": "India",
+      "description": "Chicken Tikka Masala is a popular Indian curry dish made with marinated and grilled chunks of chicken (tikka) served in a rich and creamy tomato-based sauce. The sauce is flavored with a blend of spices such as garam masala, turmeric, cumin, and coriander, resulting in a flavorful and aromatic dish that is mildly spicy and satisfying. Chicken Tikka Masala is often served with rice or naan bread for a complete meal."
+    },
+    {
+      "name": "Peking Duck",
+      "image": "https://i.ibb.co/fdQg8nb/pulled-duck-square.jpg",
+      "category": "Chinese Cuisine",
+      "quantity": 1,
+      "price": 25,
+      "origin": "China",
+      "description": "Peking Duck is a famous Chinese dish that originated from Beijing. It consists of thin slices of roasted duck served with pancakes, spring onions, cucumber, and hoisin sauce. The duck is typically prepared by air-drying the skin and then roasting it until it becomes crispy and golden. Peking Duck is known for its succulent meat and crispy skin, and it is often served as a ceremonial dish during special occasions."
+    },
+    {
+      "name": "Goulash",
+      "image": "https://i.ibb.co/YNDK6gn/beef-goulash.jpg",
+      "category": "Hungarian Cuisine",
+      "quantity": 1,
+      "price": 11,
+      "origin": "Hungary",
+      "description": "Goulash is a traditional Hungarian stew made with tender chunks of beef or pork, onions, bell peppers, tomatoes, paprika, and other spices. The dish is hearty, flavorful, and perfect for cold weather. Goulash is often served with a side of crusty bread or dumplings."
+    }
+  ]
+  
