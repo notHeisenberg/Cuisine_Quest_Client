@@ -9,6 +9,10 @@ import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from '../Routes/PrivateRoute';
 import AllItems from "../Pages/AllItems";
 import Gallery from "../Components/Gallery/Gallery";
+import FoodPurchase from "../Components/FoodPurchase/FoodPurchase";
+import MyAddedItems from "../Components/MyAddedItems/MyAddedItems";
+import AddItems from "../Components/AddItems/AddItems";
+import OrderedItems from "../Components/OrderedItems/OrderedItems";
 
 
 const router = createBrowserRouter([
@@ -29,6 +33,22 @@ const router = createBrowserRouter([
             {
                 path: "/gallery",
                 element: <PrivateRoute><Gallery></Gallery></PrivateRoute>
+            },
+            {
+                path: "/food-purchase",
+                element: <PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>
+            },
+            {
+                path: "/my-added-items",
+                element: <PrivateRoute><MyAddedItems></MyAddedItems></PrivateRoute>
+            },
+            {
+                path: "/add-item",
+                element: <PrivateRoute><AddItems></AddItems></PrivateRoute>
+            },
+            {
+                path: "/ordered-items",
+                element: <PrivateRoute><OrderedItems></OrderedItems></PrivateRoute>
             },
             {
                 path: "/login",

@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { FaGithub } from "react-icons/fa6";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
-import { Navigate, useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const Login = () => {
