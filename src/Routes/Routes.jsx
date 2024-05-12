@@ -13,6 +13,7 @@ import FoodPurchase from "../Components/FoodPurchase/FoodPurchase";
 import MyAddedItems from "../Components/MyAddedItems/MyAddedItems";
 import AddItems from "../Components/AddItems/AddItems";
 import OrderedItems from "../Components/OrderedItems/OrderedItems";
+import ItemDetails from "../Components/ItemDetails/ItemDetails";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('https://art-craft-store-server-eta.vercel.app/crafts')
+                loader: () => fetch('http://localhost:5000/items')
+            },
+            {
+                path: `/item-details/:id`,
+                element: <ItemDetails></ItemDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
             },
             {
                 path: "/all-foods",
