@@ -1,5 +1,4 @@
-import { AiOutlineFire } from "react-icons/ai";
-import { LuClock4 } from "react-icons/lu";
+
 import priceImg from "../../../src/assets/price.png"
 import volumeImg from "../../../src/assets/volume.png"
 import originImg from "../../../src/assets/country.png"
@@ -9,7 +8,7 @@ import { Link } from "react-router-dom";
 const TopSales = ({ item }) => {
     // console.log(item)
 
-    // const { name, image, category, quantity, price, origin,description,purchaseCount } = item;
+    // const { name, image, category, quantity, price, origin,description,purchaseCount } = item || {};
     const { _id, name, image, category, quantity, price, origin, description } = item || {};
 
     return (
