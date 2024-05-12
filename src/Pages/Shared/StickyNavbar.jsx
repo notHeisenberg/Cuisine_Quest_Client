@@ -10,7 +10,7 @@ export function StickyNavbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
 
-    const Active = "font-serif btn border-2 border-blue-300 text-blue-400 bg-blue-50 hover:bg-blue-100 font-semibold rounded-xl p-2 text-xl text-light-blue-500"
+    const Active = "font-serif btn border-2 border-orange-300 text-orange-400 bg-orange-50 hover:bg-orange-100 font-semibold rounded-xl p-2 text-xl text-light-blue-500"
     const notActive = `flex items-center hover:text-blue-500 transition-colors text-md`
 
     const themControler = <><label id="theme-controler" className="flex cursor-pointer gap-2">
@@ -63,7 +63,7 @@ export function StickyNavbar() {
                         <div className="navbar-start">
                             <div className="dropdown dropdown-hover">
                                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                                 </div>
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow w-52 bg-transparent ">
                                     {listItems}
@@ -71,9 +71,9 @@ export function StickyNavbar() {
                             </div>
                             <Link to={'/'}>
                                 <FancyText
-                                    gradient={{ from: '#4A00FF', to: '#00D7C0', type: 'linear' }}
+                                    gradient={{ from: '#FFBE00', to: '#F71F1C', type: 'linear' }}
                                     animate
-                                    animateDuration={500}
+                                    animateDuration={5000}
                                     className="animate__animated animate__zoomInRight text-2xl mr-4 h-20 p-5 lg:h-auto cursor-pointer  font-bold btn btn-ghost"
                                 >
                                     Cuisine Quest
@@ -91,7 +91,7 @@ export function StickyNavbar() {
                                     {themControler}
                                     <img
                                         src={user?.photoURL}
-                                        alt="avatar" size="md" className="btn btn-ghost w-14 h-14 rounded-full border-2 border-indigo-500 p-0.5"
+                                        alt="avatar" size="md" className="btn btn-ghost w-14 h-14 rounded-full border-2 border-orange-500 p-0.5"
                                         onClick={toggleMenu}
                                     />
                                     {menuOpen && (

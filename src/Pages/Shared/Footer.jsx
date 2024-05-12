@@ -30,9 +30,9 @@ const Footer = () => {
                 <div className=" grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
                     <div className="flex flex-col items-start">
                         <FancyText
-                            gradient={{ from: '#4A00FF', to: '#00D7C0', type: 'linear' }}
+                            gradient={{ from: '#FFBE00', to: '#F71F1C', type: 'linear' }}
                             animate
-                            animateDuration={500}
+                            animateDuration={5000}
                             className="text-2xl mr-4 h-20 p-5 lg:h-auto font-bold"
                         >
                             Cuisine Quest
