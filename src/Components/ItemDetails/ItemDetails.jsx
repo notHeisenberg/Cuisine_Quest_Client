@@ -15,7 +15,7 @@ const ItemDetails = () => {
     useEffect(() => {
         const fetchItemDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/item-details/${id}`);
+                const response = await fetch(`http://localhost:5000/item/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch item details');
                 }
