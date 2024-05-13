@@ -90,7 +90,7 @@ const AllItems = () => {
                 {(searchResults.length > 0 ? searchResults : items).map((item) => (
 
                     <div key={item._id} className="card glass shadow-lg shadow-orange-200">
-                        <figure className="h-1/2"><img src={item.image} className="w-full h-full " alt="car!" /></figure>
+                        <figure className=""><img src={item.image} className="w-full h-full " alt="car!" /></figure>
                         <div className="card-body border rounded-lg border-warning border-t-0">
                             <h2 className="card-title">{item.name}</h2>
                             <h2 className="font-semibold">{item.category}</h2>

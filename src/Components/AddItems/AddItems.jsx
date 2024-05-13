@@ -46,21 +46,6 @@ const AddItems = () => {
             )
 
 
-
-        // .then(data => {
-        //     if (data?.insertedId) {
-        //         Swal.fire({
-        //             title: 'Success!',
-        //             text: 'Item added succesfully',
-        //             icon: 'success',
-        //             showConfirmButton: false,
-        //             timer: 2000
-
-        //         })
-        //     }
-        //     e.target.reset()
-        // })
-
     };
 
     return (
