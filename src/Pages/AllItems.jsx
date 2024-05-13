@@ -20,12 +20,12 @@ const AllItems = () => {
     //     }
     // }, [searchBy])
     // console.log(searchBy)
-    const handleSearch = async (e) => {
+    const handleSearch = (e) => {
         // console.log(e.target.value)
         if (e.keyCode == 13) {
 
             const searchby = e.target.value
-            axios.get(`http://localhost:5000/items/${searchby}`)
+            axios.get(`http://localhost:5000/item/${searchby}`)
                 .then(res =>
                     setSearchResults(res.data))
                 .catch(err => {
@@ -65,7 +65,7 @@ const AllItems = () => {
                     <h1 className=" mb-5 text-5xl text-orange-400 opacity-90 font-bold">Cuisine Quest</h1>
                     <h1 className=" text-xl">
                         <Link to={'/'}>
-                            <span className="text-sky-500 font-bold text-xl">Home </span>
+                            <span className="btn btn-ghost text-green-400 font-bold text-xl">Home </span>
                         </Link>
                         | All Foods
                     </h1>

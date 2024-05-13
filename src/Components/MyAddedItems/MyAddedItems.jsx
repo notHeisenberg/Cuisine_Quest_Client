@@ -67,7 +67,6 @@ const MyAddedItems = () => {
                         window.location.reload();
                     });
                 }
-                // window.location.reload()
             })
 
         e.target.reset()
