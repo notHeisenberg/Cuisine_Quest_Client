@@ -41,7 +41,7 @@ const MyAddedItems = () => {
 
         console.log(name, image, catagory, quantity, price, origin, description, purchaseCount, displayName, email)
 
-        const info = { name, image, catagory, quantity, price, origin, description, purchaseCount};
+        const info = { name, image, catagory, quantity, price, origin, description, purchaseCount };
 
         axios.patch(`http://localhost:5000/items/${selectedItem._id}`, info)
             .then(res => {
@@ -63,38 +63,12 @@ const MyAddedItems = () => {
                           left top
                           no-repeat
                         `
+                    }).then(() => {
+                        window.location.reload();
                     });
                 }
+                // window.location.reload()
             })
-
-        // fetch(`https://art-craft-store-server-eta.vercel.app/crafts/${selectedItem._id}`, {
-        //     method: "PUT",
-        //     headers: { "Content-type": "application/json" },
-        //     body: JSON.stringify(info)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data)
-        //         if (data?.modifiedCount > 0) {
-        //             setItem(prevItems =>
-        //                 prevItems.map(item => (item._id === selectedItem._id ? selectedItem : item))
-        //             );
-        //             setIsModalOpen(false)
-        //             Swal.fire({
-        //                 title: "Item Updated succesfully",
-        //                 width: 600,
-        //                 padding: "3em",
-        //                 color: "#716add",
-        //                 background: "#fff url(/images/trees.png)",
-        //                 backdrop: `
-        //                   rgba(0,0,123,0.4)
-        //                   url("/images/nyan-cat.gif")
-        //                   left top
-        //                   no-repeat
-        //                 `
-        //             });
-        //         }
-        //     })
 
         e.target.reset()
     };
