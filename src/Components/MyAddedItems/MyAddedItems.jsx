@@ -41,17 +41,12 @@ const MyAddedItems = () => {
 
         console.log(name, image, catagory, quantity, price, origin, description, purchaseCount, displayName, email)
 
-        const info = { name, image, catagory, quantity, price, origin, description, purchaseCount, email };
+        const info = { name, image, catagory, quantity, price, origin, description, purchaseCount};
 
-        fetch(`https://art-craft-store-server-eta.vercel.app/crafts/${selectedItem._id}`, {
-            method: "PUT",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(info)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data?.modifiedCount > 0) {
+        axios.patch(`http://localhost:5000/items/${selectedItem._id}`, info)
+            .then(res => {
+                console.log(res.data)
+                if (res.data?.modifiedCount > 0) {
                     setItem(prevItems =>
                         prevItems.map(item => (item._id === selectedItem._id ? selectedItem : item))
                     );
@@ -71,6 +66,35 @@ const MyAddedItems = () => {
                     });
                 }
             })
+
+        // fetch(`https://art-craft-store-server-eta.vercel.app/crafts/${selectedItem._id}`, {
+        //     method: "PUT",
+        //     headers: { "Content-type": "application/json" },
+        //     body: JSON.stringify(info)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         if (data?.modifiedCount > 0) {
+        //             setItem(prevItems =>
+        //                 prevItems.map(item => (item._id === selectedItem._id ? selectedItem : item))
+        //             );
+        //             setIsModalOpen(false)
+        //             Swal.fire({
+        //                 title: "Item Updated succesfully",
+        //                 width: 600,
+        //                 padding: "3em",
+        //                 color: "#716add",
+        //                 background: "#fff url(/images/trees.png)",
+        //                 backdrop: `
+        //                   rgba(0,0,123,0.4)
+        //                   url("/images/nyan-cat.gif")
+        //                   left top
+        //                   no-repeat
+        //                 `
+        //             });
+        //         }
+        //     })
 
         e.target.reset()
     };
@@ -103,26 +127,6 @@ const MyAddedItems = () => {
                             });
                         }
                     })
-
-                // fetch(`http://localhost:5000/item/${_id}`, {
-                //     method: "DELETE"
-                // }
-                // )
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         console.log(data)
-                //         if (data.deletedCount > 0) {
-                //             setItem(prevItems =>
-                //                 prevItems.filter(item => item._id !== _id)
-                //             );
-                //             Swal.fire({
-                //                 title: "Deleted!",
-                //                 text: "Your craft has been deleted.",
-                //                 icon: "success"
-                //             });
-                //         }
-                //     }
-                //     )
             }
         });
     };
@@ -206,6 +210,7 @@ const MyAddedItems = () => {
                                             placeholder="Name"
                                             id="name"
                                             name="name"
+                                            defaultValue={selectedItem.name}
                                         />
 
                                         <label
@@ -220,6 +225,7 @@ const MyAddedItems = () => {
                                             placeholder="Catagory"
                                             id="type"
                                             name="Catagory"
+                                            defaultValue={selectedItem.catagory}
                                         />
 
                                         <label
@@ -234,6 +240,7 @@ const MyAddedItems = () => {
                                             placeholder="Enter Price"
                                             id="Price"
                                             name="price"
+                                            defaultValue={selectedItem.price}
                                         />
 
 
@@ -277,6 +284,7 @@ const MyAddedItems = () => {
                                             placeholder="Enter Image URL"
                                             id="image"
                                             name="image"
+                                            defaultValue={selectedItem.image}
                                         />
                                         <label className="block mb-2 mt-4 dark:text-white" htmlFor="Origin">
                                             Origin
@@ -287,6 +295,7 @@ const MyAddedItems = () => {
                                             placeholder="Origin"
                                             id="type"
                                             name="origin"
+                                            defaultValue={selectedItem.origin}
                                         />
 
                                         <label
@@ -303,6 +312,7 @@ const MyAddedItems = () => {
                                             placeholder="Quantity"
                                             id="quantity"
                                             name="quantity"
+                                            defaultValue={selectedItem.quantity}
                                         />
 
                                         <label className="block mb-2 mt-4 dark:text-white" htmlFor="type">
@@ -314,6 +324,7 @@ const MyAddedItems = () => {
                                             placeholder="Short description"
                                             id="type"
                                             name="description"
+                                            defaultValue={selectedItem.description}
                                         />
 
                                     </div>
