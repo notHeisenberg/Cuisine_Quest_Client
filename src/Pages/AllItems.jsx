@@ -45,7 +45,15 @@ const AllItems = () => {
     }
     const handleSearchIcon = (e) => {
         const inputField = e.target.parentElement.querySelector('input');
-        // setSearchBy(inputField.value)
+
+        const searchby = inputField.value
+        axios.get(`http://localhost:5000/items/${searchby}`)
+            .then(res =>
+                setSearchResults(res.data))
+            .catch(err => {
+                console.error(err);
+                setSearchResults([]);
+            });
         inputField.value = ""
     }
 
@@ -73,7 +81,6 @@ const AllItems = () => {
         </label>
     </>
 
-    console.log(searchResults)
     return (
         <div className="space-y-4">
             {banner}
@@ -81,35 +88,36 @@ const AllItems = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 container mx-auto">
 
                 {(searchResults.length > 0 ? searchResults : items).map((item) => (
-                    <>
-                        <div className="card glass shadow-lg shadow-orange-200">
-                            <figure className="h-1/2"><img src={item.image} className="w-full h-full " alt="car!" /></figure>
-                            <div className="card-body border rounded-lg border-warning border-t-0">
-                                <h2 className="card-title">{item.name}</h2>
-                                <h2 className="font-semibold">{item.category}</h2>
-                                <div className="flex justify-between">
-                                    <div className="flex items-center gap-1 text-xl font-bold">
-                                        <img src={priceImg} className="w-8" alt="" />
-                                        <h1>${item.price}</h1>
-                                    </div>
-                                    <div className="flex items-center gap-1 text-xl font-bold">
-                                        <img src={volumeImg} className="w-8" alt="" />
-                                        <h1>{item.quantity} items</h1>
-                                    </div>
+
+                    <div key={item._id} className="card glass shadow-lg shadow-orange-200">
+                        <figure className="h-1/2"><img src={item.image} className="w-full h-full " alt="car!" /></figure>
+                        <div className="card-body border rounded-lg border-warning border-t-0">
+                            <h2 className="card-title">{item.name}</h2>
+                            <h2 className="font-semibold">{item.category}</h2>
+                            <div className="flex justify-between">
+                                <div className="flex items-center gap-1 text-xl font-bold">
+                                    <img src={priceImg} className="w-8" alt="" />
+                                    <h1>${item.price}</h1>
                                 </div>
-                                <div className="card-actions justify-start">
-                                    <Link
-                                        to={`/item-details/${item._id}`}
-                                    >
-                                        <button className="btn btn-warning">View details</button>
-                                    </Link>
+                                <div className="flex items-center gap-1 text-xl font-bold">
+                                    <img src={volumeImg} className="w-8" alt="" />
+                                    <h1>{item.quantity} items</h1>
                                 </div>
                             </div>
-                        </div></>
+                            <div className="card-actions justify-start">
+                                <Link
+                                    to={`/item-details/${item._id}`}
+                                >
+                                    <button className="btn btn-warning">View details</button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
                 ))
                 }
             </div>
-            <div className={searchResults.length > 0 ? `text-center  ` :`text-center hidden`}>
+            <div className={searchResults.length > 0 ? `text-center  ` : `text-center hidden`}>
                 <button onClick={() => setSearchResults([])} className="btn btn-warning ">View All Items</button>
             </div>
         </div>
