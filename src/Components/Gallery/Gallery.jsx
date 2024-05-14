@@ -30,7 +30,7 @@ const Gallery = () => {
 
         const info = { displayName, email, feedbackImage, feedBack };
 
-        axios.put(`http://localhost:5000/item/feedback/${selectedItem._id}`, info)
+        axios.put(`https://cuisine-quest-server.vercel.app/item/feedback/${selectedItem._id}`, info)
             .then(res => {
                 console.log(res.data)
                 if (res.data?.upsertedCount > 0 || res.data?.modifiedCount > 0) {
@@ -75,7 +75,7 @@ const Gallery = () => {
 
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/items/user/${user?.email}`)
+        fetch(`https://cuisine-quest-server.vercel.app/items/user/${user?.email}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [user])

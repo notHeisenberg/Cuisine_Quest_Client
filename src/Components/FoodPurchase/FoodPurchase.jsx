@@ -60,7 +60,7 @@ const FoodPurchase = () => {
         const info = { name, price, quantity, date, displayName, email, image, addedBy };
         console.log(info)
 
-        axios.post(`http://localhost:5000/purchase`, info)
+        axios.post(`https://cuisine-quest-server.vercel.app/purchase`, info)
             .then(res => {
                 console.log(res.data)
                 Swal.fire({

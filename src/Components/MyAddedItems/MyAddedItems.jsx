@@ -43,7 +43,7 @@ const MyAddedItems = () => {
 
         const info = { name, image, catagory, quantity, price, origin, description, purchaseCount };
 
-        axios.patch(`http://localhost:5000/items/${selectedItem._id}`, info)
+        axios.patch(`https://cuisine-quest-server.vercel.app/items/${selectedItem._id}`, info)
             .then(res => {
                 console.log(res.data)
                 if (res.data?.modifiedCount > 0) {
@@ -86,7 +86,7 @@ const MyAddedItems = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/items/${_id}`)
+                axios.delete(`https://cuisine-quest-server.vercel.app/items/${_id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {
@@ -106,7 +106,7 @@ const MyAddedItems = () => {
 
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/items/user/${user?.email}`)
+        fetch(`https://cuisine-quest-server.vercel.app/items/user/${user?.email}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [user])

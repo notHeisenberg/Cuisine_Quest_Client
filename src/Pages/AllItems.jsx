@@ -14,7 +14,7 @@ const AllItems = () => {
 
     // useEffect(() => {
     //     if (searchBy !== null || searchBy !== undefined) {
-    //         const response = axios.get(`http://localhost:5000/items/${searchBy}`)
+    //         const response = axios.get(`https://cuisine-quest-server.vercel.app/items/${searchBy}`)
     //         console.log(response.data)
     //         setSearchResults(response.data)
     //     }
@@ -25,7 +25,7 @@ const AllItems = () => {
         if (e.keyCode == 13) {
 
             const searchby = e.target.value
-            axios.get(`http://localhost:5000/items/item/${searchby}`)
+            axios.get(`https://cuisine-quest-server.vercel.app/items/item/${searchby}`)
                 .then(res =>
                     setSearchResults(res.data))
                 .catch(err => {
@@ -47,7 +47,7 @@ const AllItems = () => {
         const inputField = e.target.parentElement.querySelector('input');
 
         const searchby = inputField.value
-        axios.get(`http://localhost:5000/item/${searchby}`)
+        axios.get(`https://cuisine-quest-server.vercel.app/item/${searchby}`)
             .then(res =>
                 setSearchResults(res.data))
             .catch(err => {

@@ -16,7 +16,7 @@ const ItemDetails = () => {
     useEffect(() => {
         const fetchItemDetails = async () => {
             try {
-                axios.get(`http://localhost:5000/item/${id}`)
+                axios.get(`https://cuisine-quest-server.vercel.app/item/${id}`)
                     .then(res => {
                         // console.log(res.data)
                         setItem(res.data)

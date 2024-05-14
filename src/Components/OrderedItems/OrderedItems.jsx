@@ -11,7 +11,9 @@ const OrderedItems = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        setPurchases(myPurchase);
+        if (myPurchase.length) {
+            setPurchases(myPurchase);
+        }
     }, [myPurchase]);
 
     const handleDelete = (itemId) => {
@@ -27,7 +29,7 @@ const OrderedItems = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/orders/${user.email}/items/${itemId}`)
+                axios.delete(`https://cuisine-quest-server.vercel.app/orders/${user.email}/items/${itemId}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             setPurchases(prevPurchases => prevPurchases.filter(purchase => purchase._id !== itemId))
@@ -35,7 +37,7 @@ const OrderedItems = () => {
                                 title: "Deleted!",
                                 text: "Your  has been deleted.",
                                 icon: "success",
-                                timer:2000
+                                timer: 2000
                             })
                         }
                     })
@@ -47,24 +49,28 @@ const OrderedItems = () => {
 
     // console.log(myPurchase)
     return (
+
         <div className="overflow-x-auto">
-            <table className="table">
-                {/* head */}
-                <thead>
-                    <tr className="text-warning ">
-                        <th></th>
-                        <th>Item Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Purchase Time</th>
-                        <th>Food ownwr</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* row 2 */}
-                    {
-                        purchases.map(purchase =>
+            {
+                purchases.length ?
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr className="text-warning ">
+                                <th></th>
+                                <th>Item Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Purchase Time</th>
+                                <th>Food ownwr</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* row 2 */}
+                            {/* {purchases.length ?
+
+                        purchases?.map(purchase =>
                             <tr key={purchase._id} className="hover ">
                                 <th><img src={purchase.image} className="w-24 h-24 rounded-full p-1 hover:p-4 " alt="" /></th>
                                 <td className="text-xl font-bold text-orange-500">{purchase.name}</td>
@@ -80,11 +86,16 @@ const OrderedItems = () => {
                                 </button></td>
                             </tr>
                         )
-                    }
+                        :
 
-                </tbody>
-            </table>
-        </div>
+                    } */}
+
+                        </tbody>
+                    </table>
+                    :
+                    <p className="text-center text-white bg-error rounded-2xl p-6"> No item ordered .... Order first</p>
+            }
+        </div >
     );
 };
 

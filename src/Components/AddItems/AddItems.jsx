@@ -28,7 +28,7 @@ const AddItems = () => {
 
         const info = { name, image, catagory, quantity, price, origin, description, purchaseCount, email };
 
-        axios.post('http://localhost:5000/items', info)
+        axios.post('https://cuisine-quest-server.vercel.app/items', info)
             .then(res => {
                 console.log(res.data)
                     if (res.data?.insertedId) {

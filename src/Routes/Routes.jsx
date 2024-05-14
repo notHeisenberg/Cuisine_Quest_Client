@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/items')
+                loader: () => fetch('https://cuisine-quest-server.vercel.app/items')
             },
             {
                 path: `/item-details/:id`,
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: "/all-foods",
                 element: <AllItems></AllItems>,
-                loader: () => fetch('http://localhost:5000/items')
+                loader: () => fetch('https://cuisine-quest-server.vercel.app/items')
 
             },
             {
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
             {
                 path: "/food-purchase/:id",
                 element: <PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`)
+                loader: ({ params }) => fetch(`https://cuisine-quest-server.vercel.app/item/${params.id}`)
             },
             {
                 path: "/my-added-items",
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             {
                 path: "/ordered-items/:id",
                 element: <PrivateRoute><OrderedItems></OrderedItems></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/purchases/${params.id}`)
+                loader: ({ params }) => fetch(`https://cuisine-quest-server.vercel.app/purchases/${params.id}`)
             },
             {
                 path: "/login",
