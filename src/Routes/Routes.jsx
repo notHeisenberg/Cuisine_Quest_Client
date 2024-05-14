@@ -42,8 +42,9 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Gallery></Gallery></PrivateRoute>
             },
             {
-                path: "/food-purchase",
-                element: <PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>
+                path: "/food-purchase/:id",
+                element: <PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`)
             },
             {
                 path: "/my-added-items",

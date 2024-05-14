@@ -170,7 +170,7 @@ const AddItems = () => {
                             <input
                                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
                                 maxLength={5}
-                                min={0}
+                                min={1}
                                 type="number"
                                 placeholder="Quantity"
                                 id="quantity"

@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import priceImg from "../../../src/assets/price.png"
 import originImg from "../../../src/assets/country.png"
 import volumeImg from "../../../src/assets/volume.png"
+import axios from "axios";
 
 const ItemDetails = () => {
     const { id } = useParams();
@@ -15,12 +16,16 @@ const ItemDetails = () => {
     useEffect(() => {
         const fetchItemDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/item/${id}`);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch item details');
-                }
-                const data = await response.json();
-                setItem(data);
+                axios.get(`http://localhost:5000/item/${id}`)
+                    .then(res => {
+                        // console.log(res.data)
+                        setItem(res.data)
+                    })
+                // const response = await fetch(`http://localhost:5000/item/${id}`);
+                // if (!response.ok) {
+                //     throw new Error('Failed to fetch item details');
+                // }
+                // const data = await response.json();
             } catch (error) {
                 console.error('Error fetching item details:', error);
             }
@@ -55,7 +60,7 @@ const ItemDetails = () => {
                                 item.email ?
                                     <div className="flex items-center gap-1">
                                         Made By:
-                                        <h1>{email} </h1>
+                                        <h1 className="font-bold">{email} </h1>
                                     </div>
                                     :
                                     <></>
@@ -66,7 +71,7 @@ const ItemDetails = () => {
                             <h1>{origin}</h1>
                         </div>
                     </div>
-                    <Link to={'/'}>
+                    <Link to={`/food-purchase/${item._id}`}>
                         <button
                             className="btn btn-warning hover:bg-purple-400 border-none text-black font-bold rounded-full">Purchase
                         </button>

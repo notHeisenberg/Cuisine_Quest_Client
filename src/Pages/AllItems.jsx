@@ -25,7 +25,7 @@ const AllItems = () => {
         if (e.keyCode == 13) {
 
             const searchby = e.target.value
-            axios.get(`http://localhost:5000/item/${searchby}`)
+            axios.get(`http://localhost:5000/items/item/${searchby}`)
                 .then(res =>
                     setSearchResults(res.data))
                 .catch(err => {
@@ -47,7 +47,7 @@ const AllItems = () => {
         const inputField = e.target.parentElement.querySelector('input');
 
         const searchby = inputField.value
-        axios.get(`http://localhost:5000/items/${searchby}`)
+        axios.get(`http://localhost:5000/item/${searchby}`)
             .then(res =>
                 setSearchResults(res.data))
             .catch(err => {
@@ -89,12 +89,12 @@ const AllItems = () => {
 
                 {(searchResults.length > 0 ? searchResults : items).map((item) => (
 
-                    <div key={item._id} className="card glass shadow-lg shadow-orange-200">
-                        <figure className=""><img src={item.image} className="w-full h-full " alt="car!" /></figure>
-                        <div className="card-body border rounded-lg border-warning border-t-0">
+                    <div key={item._id} className="card h-[600px] glass shadow-lg shadow-orange-200">
+                        <figure className="h-1/2 p-4 hover:p-0 hover:shadow-xl shadow-orange-400"><img src={item.image} className="w-full h-full rounded-lg hover:shadow-xl shadow-orange-400" alt="car!" /></figure>
+                        <div className="h-1/2 p-4 border rounded-sm border-warning border-t-0 ">
                             <h2 className="card-title">{item.name}</h2>
-                            <h2 className="font-semibold">{item.category}</h2>
-                            <div className="flex justify-between">
+                            <h2 className="font-semibold mb-2">{item.category}</h2>
+                            <div className="flex justify-between mb-4">
                                 <div className="flex items-center gap-1 text-xl font-bold">
                                     <img src={priceImg} className="w-8" alt="" />
                                     <h1>${item.price}</h1>

@@ -151,7 +151,7 @@ const MyAddedItems = () => {
             </div>
             {
                 isModalOpen && (
-                    <div className=" gadgetContainer pt-10 absolute inset-0 w-full">
+                    <div className=" gadgetContainer pt-10 fixed top-12 container">
                         <div className="shadow-lg p-5 border dark:bg-[#4d5975d5]">
                             {/* Heading */}
                             <div className="mt-5 mb-8">

@@ -33,7 +33,7 @@ const Gallery = () => {
         axios.put(`http://localhost:5000/item/feedback/${selectedItem._id}`, info)
             .then(res => {
                 console.log(res.data)
-                if (res.data?.upsertedCount > 0) {
+                if (res.data?.upsertedCount > 0 || res.data?.modifiedCount > 0) {
                     setItem(prevItems =>
                         prevItems.map(item => (item._id === selectedItem._id ? selectedItem : item))
                     );
@@ -149,6 +149,7 @@ const Gallery = () => {
                                             placeholder="Feedback"
                                             id="feedback"
                                             name="feedback"
+                                            required
                                         ></textarea>
 
 
