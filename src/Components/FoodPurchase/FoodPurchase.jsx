@@ -8,6 +8,7 @@ import axios from "axios";
 const FoodPurchase = () => {
     const data = useLoaderData()
     const { user } = useContext(AuthContext)
+    // console.log(data.image)
 
     const date = new Date().toUTCString()
 
@@ -22,6 +23,10 @@ const FoodPurchase = () => {
         const date = e.target.date.value;
         const displayName = e.target.displayName.value;
         const email = e.target.email.value;
+        const image = data.image;
+        const addedBy = data.email;
+
+
 
         // const purchaseCount = data.purchaseCount + 1
 
@@ -52,7 +57,7 @@ const FoodPurchase = () => {
         }
 
 
-        const info = { name, price, quantity, date, displayName, email };
+        const info = { name, price, quantity, date, displayName, email, image, addedBy };
         console.log(info)
 
         axios.post(`http://localhost:5000/purchase`, info)
@@ -77,7 +82,7 @@ const FoodPurchase = () => {
             <div className="shadow-lg p-5 border dark:bg-[#4d5975d5]">
                 {/* Heading */}
                 <div className="mt-5 mb-8">
-                    <p className="text-center text-3xl font-semibold">
+                    <p className="text-center text-3xl font-semibold p-3">
                         <span className="mr-3 text-[#FF497C]">
                             <i className="bx bxs-alarm-add"></i>
                         </span>
@@ -88,6 +93,9 @@ const FoodPurchase = () => {
                             Your Product
                         </span>
                     </p>
+                    <figure className="flex justify-center">
+                        <img className="rounded-lg h-64" src={data.image} alt="" />
+                    </figure>
                 </div>
                 {/* form */}
                 <form onSubmit={handelPurchase}>
@@ -112,7 +120,7 @@ const FoodPurchase = () => {
                                 Quantity
                             </label>
                             <input
-                                className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
+                                className="w-full p-2 border rounded-md text-[#FF497C] font-bold focus:outline-[#FF497C]"
                                 maxLength={5}
                                 max={data.quantity}
                                 min={0}
@@ -135,7 +143,6 @@ const FoodPurchase = () => {
                                 defaultValue={user.displayName}
                                 disabled
                             />
-
 
                         </div>
                         {/* Right side */}

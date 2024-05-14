@@ -21,11 +21,6 @@ const ItemDetails = () => {
                         // console.log(res.data)
                         setItem(res.data)
                     })
-                // const response = await fetch(`http://localhost:5000/item/${id}`);
-                // if (!response.ok) {
-                //     throw new Error('Failed to fetch item details');
-                // }
-                // const data = await response.json();
             } catch (error) {
                 console.error('Error fetching item details:', error);
             }

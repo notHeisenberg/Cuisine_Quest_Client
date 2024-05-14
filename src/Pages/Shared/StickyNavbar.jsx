@@ -131,7 +131,7 @@ export function StickyNavbar() {
                                             </Link>
 
                                             {/* My ordered food items */}
-                                            <Link to={'/ordered-items'}>
+                                            <Link to={`/ordered-items/${user.email}`}>
                                                 <button
                                                     role="menuitem"
                                                     className="flex w-full cursor-pointer select-none items-center gap-2 rounded-md px-3 pt-[9px] pb-2 text-start btn btn-ghost"
