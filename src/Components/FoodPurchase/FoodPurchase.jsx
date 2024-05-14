@@ -23,9 +23,9 @@ const FoodPurchase = () => {
         const displayName = e.target.displayName.value;
         const email = e.target.email.value;
 
-        const purchaseCount = data.purchaseCount + 1
+        // const purchaseCount = data.purchaseCount + 1
 
-        console.log(name, price, quantity, date, displayName, email, purchaseCount)
+        // console.log(name, price, quantity, date, displayName, email)
 
         if (quantity === 0) {
             Swal.fire({
@@ -52,10 +52,23 @@ const FoodPurchase = () => {
         }
 
 
-        const info = { name, price, quantity, date, displayName, email, purchaseCount };
+        const info = { name, price, quantity, date, displayName, email };
         console.log(info)
 
-        axios.post(`http://localhost:5000/item/`)
+        axios.post(`http://localhost:5000/purchase`, info)
+            .then(res => {
+                console.log(res.data)
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Item Purchase succesfully',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 2000
+
+                }).then(() => window.location.reload())
+            }
+
+            )
     }
 
     // console.log(data)
