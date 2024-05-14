@@ -43,7 +43,7 @@ const MyAddedItems = () => {
 
         const info = { name, image, catagory, quantity, price, origin, description, purchaseCount };
 
-        axios.patch(`https://cuisine-quest-server.vercel.app/items/${selectedItem._id}`, info)
+        axios.put(`https://cuisine-quest-server.vercel.app/items/${selectedItem._id}`, info)
             .then(res => {
                 console.log(res.data)
                 if (res.data?.modifiedCount > 0) {
@@ -86,7 +86,7 @@ const MyAddedItems = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`https://cuisine-quest-server.vercel.app/items/${_id}`)
+                axios.post(`https://cuisine-quest-server.vercel.app/items/${_id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {

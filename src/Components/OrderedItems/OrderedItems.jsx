@@ -29,7 +29,7 @@ const OrderedItems = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://cuisine-quest-server.vercel.app/orders/${user.email}/items/${itemId}`)
+                axios.post(`https://cuisine-quest-server.vercel.app/orders/${user.email}/items/${itemId}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             setPurchases(prevPurchases => prevPurchases.filter(purchase => purchase._id !== itemId))
@@ -68,27 +68,27 @@ const OrderedItems = () => {
                         </thead>
                         <tbody>
                             {/* row 2 */}
-                            {/* {purchases.length ?
+                            {
 
-                        purchases?.map(purchase =>
-                            <tr key={purchase._id} className="hover ">
-                                <th><img src={purchase.image} className="w-24 h-24 rounded-full p-1 hover:p-4 " alt="" /></th>
-                                <td className="text-xl font-bold text-orange-500">{purchase.name}</td>
-                                <td className="text-lg font-bold">${purchase.price}</td>
-                                <td className="text-red-400 text-xl font-bold">{purchase.quantity}</td>
-                                <td className="text-green-500">{purchase.date}</td>
-                                <td className="text-info underline">{purchase.addedBy}</td>
-                                <td><button
-                                    onClick={() => handleDelete(purchase._id)}
-                                    className="absolute right-4 btn btn-ghost border-none bg-error text-white"
-                                >
-                                    X
-                                </button></td>
-                            </tr>
-                        )
-                        :
+                                purchases?.map(purchase =>
+                                    <tr key={purchase._id} className="hover ">
+                                        <th><img src={purchase.image} className="w-24 h-24 rounded-full p-1 hover:p-4 " alt="" /></th>
+                                        <td className="text-xl font-bold text-orange-500">{purchase.name}</td>
+                                        <td className="text-lg font-bold">${purchase.price}</td>
+                                        <td className="text-red-400 text-xl font-bold">{purchase.quantity}</td>
+                                        <td className="text-green-500">{purchase.date}</td>
+                                        <td className="text-info underline">{purchase.addedBy}</td>
+                                        <td><button
+                                            onClick={() => handleDelete(purchase._id)}
+                                            className="absolute right-4 btn btn-ghost border-none bg-error text-white"
+                                        >
+                                            X
+                                        </button></td>
+                                    </tr>
+                                )
 
-                    } */}
+
+                            }
 
                         </tbody>
                     </table>
