@@ -1,15 +1,21 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import instance from "../../utilis/instance";
 
 
 const OrderedItems = () => {
-    const myPurchase = useLoaderData()
+    const [myPurchase, setmyPurchase] = useState([]);
     const [purchases, setPurchases] = useState([]);
     const { user } = useContext(AuthContext)
 
+    useEffect(() => {
+        instance.get(`/purchases/${user.email}`)
+            .then(res => setmyPurchase(res.data))
+    }, [user.email])
+
+    console.log(myPurchase)
     useEffect(() => {
         if (myPurchase.length) {
             setPurchases(myPurchase);

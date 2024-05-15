@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
             instance.post("/logout").then(() => {
                 setUser(null);
                 setLoading(false);
-            });
+            }).then(() => window.location.reload())
         });
     }
 

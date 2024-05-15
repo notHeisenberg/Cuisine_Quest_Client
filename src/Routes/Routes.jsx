@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             {
                 path: "/ordered-items/:id",
                 element: <PrivateRoute><OrderedItems></OrderedItems></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://cuisine-quest-server.vercel.app/purchases/${params.id}`)
+                // loader: ({ params }) => fetch(`https://cuisine-quest-server.vercel.app/purchases/${params.id}`, { credentials: "include" })
             },
             {
                 path: "/login",
