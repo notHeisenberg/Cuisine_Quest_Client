@@ -2,7 +2,14 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../../../firebase.config";
+import axios from "axios";
 
+
+const instance = axios.create({
+    withCredentials: true,
+    baseURL: "https://cuisine-quest-server.vercel.app"
+})
+// instance.get('/todos')
 
 export const AuthContext = createContext(null)
 
@@ -34,9 +41,24 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const logout = () => {
+    const logout = async () => {
         setLoading(true)
-        return signOut(auth)
+        return await signOut(auth).then(() => {
+            instance.post("/logout").then(() => {
+                setUser(null);
+                setLoading(false);
+            });
+        });
+    }
+
+
+    const handleToken = async (user) => {
+        return await instance.post("/jwt", { email: user.email })
+            .then(response => {
+                console.log(response.data)
+                setUser(user);
+                // setLoading(false);
+            });
     }
 
     useEffect(() => {
@@ -44,7 +66,8 @@ const AuthProvider = ({ children }) => {
             // console.log(currentUser);
             if (currentUser) {
                 // Set the user only if a user is logged in
-                setUser(currentUser);
+                // setUser(currentUser);
+                handleToken(currentUser)
             } else {
                 // Otherwise, set user to null
                 setUser(null);

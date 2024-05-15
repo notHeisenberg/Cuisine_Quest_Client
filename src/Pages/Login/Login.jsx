@@ -83,7 +83,7 @@ const Login = () => {
         googleSignUp()
             .then(result => {
                 toast.success("Google login succesfully")
-                console.log(result.user)
+                // console.log(result.user)
 
                 const userInfo = {
                     email: result.user.email,
@@ -99,10 +99,10 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                     })
 
-                console.log(userInfo)
+                // console.log(userInfo)
                 navigate(location?.state || '/')
             })
             .catch(error => toast.error(error))
