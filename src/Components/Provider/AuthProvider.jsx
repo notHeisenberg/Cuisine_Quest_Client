@@ -2,13 +2,14 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../../../firebase.config";
-import axios from "axios";
+// import axios from "axios";
+import instance from "../../utilis/instance";
 
 
-const instance = axios.create({
-    withCredentials: true,
-    baseURL: "https://cuisine-quest-server.vercel.app"
-})
+// export const instance = axios.create({
+//     withCredentials: true,
+//     baseURL: "https://cuisine-quest-server.vercel.app"
+// })
 // instance.get('/todos')
 
 export const AuthContext = createContext(null)
@@ -53,12 +54,14 @@ const AuthProvider = ({ children }) => {
 
 
     const handleToken = async (user) => {
+        setLoading(true);
         return await instance.post("/jwt", { email: user.email })
             .then(response => {
                 console.log(response.data)
                 setUser(user);
-                // setLoading(false);
-            });
+                setLoading(false);
+            })
+            .finally(() => setLoading(false))
     }
 
     useEffect(() => {
@@ -71,8 +74,9 @@ const AuthProvider = ({ children }) => {
             } else {
                 // Otherwise, set user to null
                 setUser(null);
+                setLoading(false)
             }
-            setLoading(false)
+            // setLoading(false)
         })
         return () => connection();
 
